@@ -4,7 +4,7 @@ const Events = ({event}) => {
 
     const deleteEvent = (id)=>{
         console.log(id);
-        fetch(`http://localhost:3002/deleteEvent/${id}`,{
+        fetch(`https://morning-cliffs-60598.herokuapp.com/deleteEvent/${id}`,{
             method:"DELETE"
         })
         .then(res=>res.json())
@@ -19,7 +19,7 @@ const Events = ({event}) => {
     return (
         <div className="col-lg-3 col-md-6 col-xs-8">
             <img src={event.images} className="img-fluid" style={{height:'300px'}} alt=""/>
-            <h4>This is events in home <button onClick={()=>deleteEvent(event._id)}>Delete</button> </h4>
+            <h4>{event.name} <button onClick={()=>deleteEvent(event._id)}>Delete</button> </h4>
         </div>
     );
 };

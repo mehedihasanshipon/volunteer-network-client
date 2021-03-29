@@ -11,11 +11,11 @@ const AddEvents = () => {
     //   console.log(data)
       const event = {
           name: data.name,
-          images:imgUrl
+          images:imgUrl && imgUrl
       }
 
       axios
-      .post("http://localhost:3002/addEvent", event)
+      .post("https://morning-cliffs-60598.herokuapp.com/addEvent", event)
       .then(function (response) {
         console.log('Server side result',response);
       })
